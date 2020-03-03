@@ -1,0 +1,24 @@
+//Created by Agustin Aguilera
+//move the mouse left and right to create weird shapes!
+void setup() {
+  size(600, 400);
+}
+
+void draw() {
+  background(0);
+  
+  noFill();
+  stroke(255);
+  beginShape();
+  
+  //maps the size of the screen with respect to the mouse
+  //creates a for loop that creates a vertex of a transfixed x and y variable
+  float spacing = map(mouseX, 0, width, 5, 100);
+  for (float a = 0; a < 360; a += spacing){
+    float x = 100 * sin(a) + 200;
+    float y = 100 * cos(a) + 200;
+    vertex(x,y);
+  }
+  
+  endShape(CLOSE);
+}
